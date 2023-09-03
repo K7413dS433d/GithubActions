@@ -19,6 +19,9 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.x # Specify your Python version
+          
+      - name: Install Dependencies
+        run: pip install pyTelegramBotAPI
 
       - name: Run Python Script
         env:
