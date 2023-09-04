@@ -5,4 +5,6 @@ github.reposatory : ex) K7413dS433d/GithubActions
 github.repository_owner : ex) K7413dS433d
 github.repositoryUrl : ex) git://github.com/K7413dS433d/GithubActions
 github.retention_days : The number of days that workflow run logs and artifacts are kept ex) 90
-github.secret_source : 
+github.secret_source : The source of a secret used in a workflow. Possible values ex) None, Actions, Codespaces, or Dependabot
+github.sha : The commit of repo changes SHA that triggered the workflow. The value of this commit SHA depends on the event that triggered the workflow ex) ffac537e6cbbf934b08745a378932722df287a53
+github.workflow_sha : The commit SHA for the workflow file
