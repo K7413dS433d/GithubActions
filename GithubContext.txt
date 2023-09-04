@@ -1,3 +1,6 @@
 github.ref : branch full name ex) refs/heads/main
 github.ref_name : branch name ex) main
 github.ref_type : branch type ex) branch or tag
+github.reposatory : ex) K7413dS433d/GithubActions
+github.repository_owner : ex) K7413dS433d
+github.repositoryUrl : ex) 
