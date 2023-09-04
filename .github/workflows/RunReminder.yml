@@ -4,7 +4,7 @@ name: run python script for reminde me on telegram
 
 on:
   schedule:
-    - corn: 0 18 * * *
+    - cron: '0 18 * * *'
 
 jobs:
   run_script:
