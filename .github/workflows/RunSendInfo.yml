@@ -27,6 +27,14 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }} #Get the bot token from Secret
           TELEGRAM_USER_ID: ${{ secrets.TELEGRAM_USER_ID }} #Get the user ID from Secret
+
+        run: python .github/scripts/SendInfo.py ${{ github.repositoryUrl }}
+
+      - name: Run a command and store the result
+        id: my_step
         run: |
-          python .github/scripts/SendInfo.py ${{ github.repositoryUrl }}
-          python .github/scripts/SendInfo.py {{ $? }}
+          result=$(your_command_here)
+          echo "::set-output name=resul
+
+      - name: Use the stored result
+        run: python .github/scripts/SendInfo.py ${{ steps.my_step.outputs.result }}
