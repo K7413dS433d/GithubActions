@@ -20,7 +20,7 @@ jobs:
           python-version: 3.x # Specify your Python version
 
       - name: Install Dependencies
-        run: pip install -r .github/reqirements.txt
+        run: pip install -r .github/scripts/reqirements.txt
 
       - name: Run Python Script
         env:
