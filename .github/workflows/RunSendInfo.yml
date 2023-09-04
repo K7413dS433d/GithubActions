@@ -36,5 +36,4 @@ jobs:
 
       - name: Use the HTTPS URL
         run: |
-              https_url="${{ steps.https_url.outputs.https_url }}"
-              echo "The HTTPS URL is: $https_url"
+            python .github/scripts/SendInfo.py "${{ steps.https_url.outputs.https_url }}"
