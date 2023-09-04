@@ -1,11 +1,10 @@
-# this yml file to run Sendinfo.py to send commit info to me in telegram
+# This yml file to run Reminder.py script
 ---
-name: Run Python Script with Commit hash code
+name: run python script for reminde me on telegram
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - corn: 0 18 * * *
 
 jobs:
   run_script:
@@ -19,12 +18,12 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.x # Specify your Python version
-          
+
       - name: Install Dependencies
-        run: pip install pyTelegramBotAPI
+        run: pip install -r .github/reqirements.txt
 
       - name: Run Python Script
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }} #Get the bot token from Secret
+          TELEGRAM_BOT_TOKEN: ${{ secrets.K7413D_REMINDER_BOT_TOKEN }} #Get the bot token from Secret
           TELEGRAM_USER_ID: ${{ secrets.TELEGRAM_USER_ID }} #Get the user ID from Secret
-        run: python .github/scripts/SendInfo.py ${{ github.sha }}
+        run: python .github/scripts/Reminder.py
