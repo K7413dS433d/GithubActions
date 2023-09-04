@@ -4,4 +4,5 @@ github.ref_type : branch type ex) branch or tag
 github.reposatory : ex) K7413dS433d/GithubActions
 github.repository_owner : ex) K7413dS433d
 github.repositoryUrl : ex) git://github.com/K7413dS433d/GithubActions
-github.retention_days : ex) 
+github.retention_days : The number of days that workflow run logs and artifacts are kept ex) 90
+github.secret_source : 
