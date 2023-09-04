@@ -24,17 +24,17 @@ jobs:
         run: pip install pyTelegramBotAPI
 
       - name: Run Python Script
+        id: https_url
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }} #Get the bot token from Secret
           TELEGRAM_USER_ID: ${{ secrets.TELEGRAM_USER_ID }} #Get the user ID from Secret
 
-        run: python .github/scripts/SendInfo.py ${{ github.repositoryUrl }}
-
-      - name: Run a command and store the result
-        id: my_step
         run: |
-          result=$(your_command_here)
-          echo "::set-output name=result::$result"
+            repository_url="${{ github.repositoryUrl }}"
+            https_url="${repository_url/git:\/\//https:\/\/}"
+            echo "::set-output name=https_url::$https_url"
 
-      - name: Use the stored result
-        run: python .github/scripts/SendInfo.py ${{ steps.my_step.outputs.result }}
+      - name: Use the HTTPS URL
+        run: |
+              https_url="${{ steps.https_url.outputs.https_url }}"
+              echo "The HTTPS URL is: $https_url"
