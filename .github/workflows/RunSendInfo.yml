@@ -3,9 +3,9 @@
 name: Run Python Script with Commit hash code
 
 on:
-  push:
+  push: # spacify the trigger on push
     branches:
-      - main
+      - main # spacify the main branch only
 
 jobs:
   run_script:
