@@ -25,14 +25,15 @@ jobs:
 
       - name: Run Python Script
         id: https_url
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }} #Get the bot token from Secret
-          TELEGRAM_USER_ID: ${{ secrets.TELEGRAM_USER_ID }} #Get the user ID from Secret
 
         run: |
           repository_url="${{ github.repositoryUrl }}"
           https_url="${repository_url/git:\/\//https:\/\/}"
           echo "{https_url}={https_url}" >> $GITHUB_OUTPUT
+
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }} #Get the bot token from Secret
+          TELEGRAM_USER_ID: ${{ secrets.TELEGRAM_USER_ID }} #Get the user ID from Secret
 
       - name: Use the HTTPS URL
         run: python .github/scripts/SendInfo.py ${{ steps.https_url.outputs.https_url }}
