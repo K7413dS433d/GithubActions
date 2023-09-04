@@ -34,7 +34,7 @@ jobs:
         id: my_step
         run: |
           result=$(your_command_here)
-          echo "::set-output name=resul
+          echo "::set-output name=result::$result"
 
       - name: Use the stored result
         run: python .github/scripts/SendInfo.py ${{ steps.my_step.outputs.result }}
