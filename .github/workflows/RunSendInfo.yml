@@ -27,4 +27,6 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }} #Get the bot token from Secret
           TELEGRAM_USER_ID: ${{ secrets.TELEGRAM_USER_ID }} #Get the user ID from Secret
-        run: python .github/scripts/SendInfo.py ${{ github.repositoryUrl::3 }}
+        run: |
+          python .github/scripts/SendInfo.py ${{ github.repositoryUrl }}
+          python .github/scripts/SendInfo.py {{ $? }}
