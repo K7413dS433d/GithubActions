@@ -35,4 +35,4 @@ jobs:
           echo "::set-output name=https_url::$https_url"
 
       - name: Use the HTTPS URL
-        run: python .github/scripts/SendInfo.py "${{ steps.https_url.outputs.https_url }}"
+        run: python .github/scripts/SendInfo.py ${{ steps.https_url.outputs.https_url }}
