@@ -30,10 +30,9 @@ jobs:
           TELEGRAM_USER_ID: ${{ secrets.TELEGRAM_USER_ID }} #Get the user ID from Secret
 
         run: |
-            repository_url="${{ github.repositoryUrl }}"
-            https_url="${repository_url/git:\/\//https:\/\/}"
-            echo "::set-output name=https_url::$https_url"
+          repository_url="${{ github.repositoryUrl }}"
+          https_url="${repository_url/git:\/\//https:\/\/}"
+          echo "::set-output name=https_url::$https_url"
 
       - name: Use the HTTPS URL
-        run: |
-            python .github/scripts/SendInfo.py "${{ steps.https_url.outputs.https_url }}"
+        run: python .github/scripts/SendInfo.py "${{ steps.https_url.outputs.https_url }}"
