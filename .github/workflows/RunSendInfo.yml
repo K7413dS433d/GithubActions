@@ -30,6 +30,7 @@ jobs:
           TELEGRAM_USER_ID: ${{ secrets.TELEGRAM_USER_ID }} #Get the user ID from Secret
 
         run: |
+          echo "iam here"
           repository_url="${{ github.repositoryUrl }}"
           https_url="${repository_url/git:\/\//https:\/\/}"
           echo "::set-output name=https_url::$https_url"
