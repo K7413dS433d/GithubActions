@@ -28,6 +28,6 @@ jobs:
 
       - name: Run Python Script
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.K7413D_REMINDER_BOT_TOKEN }} #Get the bot token from Secret
+          K7413D_REMINDER_BOT_TOKEN: ${{ secrets.K7413D_REMINDER_BOT_TOKEN }} #Get the bot token from Secret
           TELEGRAM_USER_ID: ${{ secrets.TELEGRAM_USER_ID }} #Get the user ID from Secret
         run: python .github/scripts/Reminder.py
