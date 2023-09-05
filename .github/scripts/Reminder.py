@@ -5,7 +5,7 @@ import telebot
 
 
 # git the bot token from environment variables
-Bot_Token = os.environ.get('K7413D_REMINDER_BOT_TOKEN')
+Reminder_Bot_Token = os.environ.get('K7413D_REMINDER_BOT_TOKEN')
 
 # They said so api
 They_said_so_Token = os.environ.get('THEY_SAID_SO_TOKEN')
@@ -49,7 +49,7 @@ message2 = requestRes
 
 # bot configuration
 
-bot = telebot.TeleBot(Bot_Token)  # create a bot instance
+bot = telebot.TeleBot(Reminder_Bot_Token)  # create a bot instance
 
 bot.send_message(chat_id, message1)  # send message to bot
 bot.send_message(chat_id, message2)  # send message to bot
