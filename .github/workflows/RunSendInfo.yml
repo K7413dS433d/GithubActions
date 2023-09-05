@@ -23,8 +23,12 @@ jobs:
       - name: Install Dependencies
         run: pip install pyTelegramBotAPI
 
+      - name: export the Url to Github env
+        run: |
+          echo TMP=$(${{github.sha}}/git:\/\//https:\/\/) >> $GITHUB_ENV
+
       - name: Run Python Script
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }} #Get the bot token from Secret
           TELEGRAM_USER_ID: ${{ secrets.TELEGRAM_USER_ID }} #Get the user ID from Secret
-        run: python .github/scripts/SendInfo.py ${{ github.sha }}
+        run: python .github/scripts/SendInfo.py ${{ env.TMP }}
