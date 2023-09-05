@@ -15,6 +15,8 @@ bot = telebot.TeleBot(Bot_Token)  # create a bot instance
 
 args = "".join(sys.argv[1:])  # take a commit info as an arguments from github
 
+args = "\033[91m" + args + "\033[0m" #change the color
+
 current_datetime = datetime.datetime.now()  # current date and time
 
 current_day_name = current_datetime.strftime("%A")  # Full day name
