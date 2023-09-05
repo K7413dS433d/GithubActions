@@ -37,7 +37,7 @@ if response.status_code == 200:
     author = data['contents']['quotes'][0]['author']
     requestRes = f"{quote} \n Author: \n {author}"
 else:
-    requestRes = f"Error with api with status code {response.status_code} "
+    requestRes = f"Api error with status code: {response.status_code} "
 
 
 # handel the message
