@@ -3,7 +3,6 @@
 name: run python script to reminde me on telegram
 
 on:
-  push:
   schedule:
     - cron: "0 14 * * 0-6"
 
