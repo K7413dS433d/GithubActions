@@ -25,7 +25,9 @@ jobs:
 
       - name: export the Url to Github env
         run: |
-          echo "TMP=${{ github.repositoryUrl/git:\/\//https:\/\/ }}" >> $GITHUB_ENV
+          TMP = ${{ github.repositoryUrl }}
+          TMP = $($TMP/git:\/\//https:\/\/)
+          echo "res=TMP" >> $GITHUB_ENV
 
       - name: Run Python Script
         env:
