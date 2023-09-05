@@ -1,6 +1,7 @@
 import telebot
 import sys
 import os
+import datetime
 
 
 # git the bot token from environment variables
@@ -13,6 +14,15 @@ bot = telebot.TeleBot(Bot_Token)  # create a bot instance
 
 
 args = "".join(sys.argv[1:])  # take a commit info as an arguments from github
+
+current_datetime = datetime.datetime.now()  # current date and time
+
+current_day_name = current_datetime.strftime("%A")  # Full day name
+
+formatted_time = current_datetime.strftime(
+    '%I:%M %p')  # 12-hour time format with AM/PM
+
+message = f"{current_day_name} on {current_datetime.strftime('%Y-%m-%d')} at {formatted_time}\n {args}"
 
 
 bot.send_message(chat_id, args)
