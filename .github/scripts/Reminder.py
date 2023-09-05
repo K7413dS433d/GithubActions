@@ -40,7 +40,6 @@ else:
     requestRes = f"Error with api with status code {response.status_code} "
 
 
-
 # handel the message
 message1 = f'''{current_date}, {current_day_name} 🤷‍♂️
             Let’s go to gym :
