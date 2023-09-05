@@ -4,7 +4,7 @@ name: run python script to reminde me on telegram
 
 on:
   schedule:
-    - cron: "0 14 * * 0-6"
+    - cron: "1 15 * * 0-6"
 
     # This command allows us to run the Action automatically from the Actions tab.
   #workflow_dispatch:
