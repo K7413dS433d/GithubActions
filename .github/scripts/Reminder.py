@@ -8,7 +8,7 @@ import telebot
 Bot_Token = os.environ.get('K7413D_REMINDER_BOT_TOKEN')
 
 # They said so api
-Tey_said_so_Token = os.environ.get('THEY_SAID_SO_TOKEN')
+They_said_so_Token = os.environ.get('THEY_SAID_SO_TOKEN')
 
 
 # git user id from environment variables
@@ -25,7 +25,7 @@ requestRes = ""  # Request result
 
 
 headers = {
-    'X-TheySaidSo-Api-Secret': f'{Tey_said_so_Token}'
+    'X-TheySaidSo-Api-Secret': f'{They_said_so_Token}'
 }
 
 response = requests.get("https://quotes.rest/qod", headers=headers)
@@ -53,4 +53,4 @@ message2 = requestRes
 bot = telebot.TeleBot(Bot_Token)  # create a bot instance
 
 bot.send_message(chat_id, message1)  # send message to bot
-bot.send_message(chat_id, message2)  # send message to b
+bot.send_message(chat_id, message2)  # send message to bot
