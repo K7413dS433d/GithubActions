@@ -22,7 +22,7 @@ current_day_name = current_datetime.strftime("%A")  # Full day name
 formatted_time = current_datetime.strftime(
     '%I:%M %p')  # 12-hour time format with AM/PM
 
-message = f"{current_day_name} on {current_datetime.strftime('%Y-%m-%d')} at {formatted_time}\n {args}"
+message = f"{current_day_name} on {current_datetime.strftime('%Y-%m-%d')} at {formatted_time}\n\n {args}"
 
 
 bot.send_message(chat_id, message)
