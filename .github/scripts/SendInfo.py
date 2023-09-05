@@ -2,6 +2,7 @@ import telebot
 import sys
 import os
 import datetime
+import pytz
 
 
 # git the bot token from environment variables
@@ -15,7 +16,9 @@ bot = telebot.TeleBot(Bot_Token)  # create a bot instance
 
 args = "".join(sys.argv[1:])  # take a commit info as an arguments from github
 
-current_datetime = datetime.datetime.now()  # current date and time
+egypt_timezone = pytz.timezone('Africa/Cairo') # Egyptian time zone
+
+current_datetime = datetime.datetime.now(egypt_timezone)  # current date and time
 
 current_day_name = current_datetime.strftime("%A")  # Full day name
 
