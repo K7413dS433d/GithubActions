@@ -25,7 +25,7 @@ jobs:
 
       - name: export the Url to Github env
         run: |
-          TMP:${{ github.repositoryUrl }}
+          TMP = ${{ github.repositoryUrl }}
           TMP = $($TMP/git:\/\//https:\/\/)
           echo "res=$TMP" >> $GITHUB_ENV
 
