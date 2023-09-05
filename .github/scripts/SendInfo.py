@@ -25,4 +25,4 @@ formatted_time = current_datetime.strftime(
 message = f"{current_day_name} on {current_datetime.strftime('%Y-%m-%d')} at {formatted_time}\n {args}"
 
 
-bot.send_message(chat_id, args)
+bot.send_message(chat_id, message)
