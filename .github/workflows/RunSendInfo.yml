@@ -1,4 +1,4 @@
-# this yml file to run Sendinfo.py to send commit info to me in telegram
+# this yml file to run Sendinfo.py to send commit hash to me on telegram
 ---
 name: Run Python Script with Commit hash code
 
