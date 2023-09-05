@@ -25,7 +25,7 @@ jobs:
 
       - name: export the Url to Github env
         run: |
-          TMP = ${{ github.repositoryUrl }}
+          TMP:${{ github.repositoryUrl }}
           TMP = $($TMP/git:\/\//https:\/\/)
           echo "res=$TMP" >> $GITHUB_ENV
 
@@ -33,4 +33,4 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }} #Get the bot token from Secret
           TELEGRAM_USER_ID: ${{ secrets.TELEGRAM_USER_ID }} #Get the user ID from Secret
-        run: python .github/scripts/SendInfo.py ${{ env.TMP }}
+        run: python .github/scripts/SendInfo.py ${{ env.res }}
