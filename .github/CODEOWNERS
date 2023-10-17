@@ -1,0 +1,11 @@
+
+
+# Default reviewers/codeowners for all code changes
+* @Jasoncheungy @K7413dS433d
+
+
+# Reviewer by email for html files
+# *.html test@gmail.com
+
+# Reviewer by specific folders
+# /folder1/folder2 @user1 @user2 @test@gmail.com
