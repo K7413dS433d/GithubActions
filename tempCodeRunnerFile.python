@@ -8,5 +8,16 @@ headers = {
 }
 
 response = requests.get(url, headers=headers)
-print(response.status_code)
-print(response.json()['originator']['name'])
+
+
+
+
+if response.status_code == 200:
+    data = response.json()
+    quote = data['content']
+    author = data['originator']['name']
+    requestRes = f"{quote} \n Author: \n {author}"
+else:
+    requestRes = f"Api error with status code: {response.status_code} "
+    
+print(requestRes)

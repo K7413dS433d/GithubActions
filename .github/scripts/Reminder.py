@@ -54,7 +54,7 @@ response = requests.get(url, headers=headers)
 
 if response.status_code == 200:
     data = response.json()
-    quote = data['contents']
+    quote = data['content']
     author = data['originator']['name']
     requestRes = f"{quote} \n Author: \n {author}"
 else:
